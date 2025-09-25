@@ -1,0 +1,7 @@
+{
+  "host": "127.0.0.1",
+  "user": "new_user",
+  "password": "ABCDe12345",
+  "database": "bank_accounts",
+  "charset": "utf8"
+}

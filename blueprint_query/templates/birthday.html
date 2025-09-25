@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск клиентов</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1><center><h2>Поиск клиентов</h2></center>
+        </header>
+        <nav class="navigation-primary" aria-label="Primary">
+            <ul>
+                <li> <a href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a></li>
+                <li><a href="{{url_for('bp_auth.sign_out')}}">Выход из системы</a></li>
+            </ul>
+        </nav>
+        <center>
+        <div class="content-container">
+            <form action="" method="post">
+                <label for="birthday">Дата рождения (YYYY-MM-DD)</label>
+                <input type="text" name="birthday" id="birthday">
+                <br><br>
+                <input type="submit" class="button_slide slide_down" value="Найти">
+                <input type="reset" class="button_slide slide_down" value="Сбросить">
+                <br><br>
+            </form>
+        </div>
+        </center>
+    </div>
+</body>
+</html>

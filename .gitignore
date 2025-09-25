@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# virtualenv
+venv/
+env/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# env / secrets
+.env
+.env.*
+./data_files/db_config.json
+./data_files/secret_key.json
+
+# logs
+*.log
+
+# byte-compiled / backup
+*.bak

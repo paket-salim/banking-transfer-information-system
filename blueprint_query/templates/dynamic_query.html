@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1>
+        </header>
+        <nav class="navigation-primary" aria-label="Primary">
+            <ul>
+
+                <li> <a href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a></li>
+                <li><a href="{{url_for('bp_auth.sign_out')}}">Выход из системы</a></li>
+
+            </ul>
+        </nav>
+    <center>
+        <h2>{{title}}</h2>
+    <table>
+        <tr class="tab_title">
+            <th>Фамилия</th>
+            <th>Дата рождения</th>
+            <th>Домашний адрес</th>
+            <th>Номер телефона</th>
+            <th>Дата подписания договора</th>
+            <th>Дата расторжения договора</th>
+        </tr>
+        {% for item in client %}
+        <tr>
+            <td>{{item['surname']}}</td>
+            <td>{{item['birthday']}}</td>
+            <td>{{item['adress']}}</td>
+            <td>{{item['phone_number']}}</td>
+            <td>{{item['signing_date']}}</td>
+            <td>{{item['termination_date']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!--<a class="button" href="{{url_for('bp_query.query_menu')}}">Общий поиск</a>-->
+    </center>
+    </div>
+</body>
+</html>

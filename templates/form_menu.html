@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню выбора</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1><center><h2>Начальная страница</h2></center>
+        </header>
+        <nav class="navigation-primary" aria-label="Primary">
+            <ul>
+                <li> <a href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a></li>
+                <li><a href="{{url_for('bp_auth.sign_out')}}">Выход из системы</a></li>
+            </ul>
+        </nav>
+        <div class="content-container">
+            {% if (group_name) and (user_id) %}
+                <h4>Вы авторизовались, как {{group_name}}.</h4>
+            {% endif %}
+            <center>
+                {% if user_id %}
+                    <h2>Выберите действие:</h2>
+                {% endif %}
+                {% if not user_id %}
+                    <h2>{{error}}</h2>
+                    <div style="height: 10px; clear:both;"></div>
+                    <a href="{{url_for('auth')}}" style="font-size: 24px">Авторизоваться</a><br>
+                {% elif error %}
+                    <h2>{{error}}</h2>
+                    <div style="height: 10px; clear:both;"></div>
+                {% endif %}
+                {% if user_id %}
+                <a href="{{url_for('bp_query.query_bank_rate')}}" style="font-size: 24px">Курс банка</a>
+                <div style="height: 10px; clear:both;"></div>
+                {% endif %}
+                {% if group_name == 'владелец' or group_name == 'аналитик'%}
+                    <a href="{{url_for('bp_report.work_with_reports')}}" style="font-size: 24px">Работа с отчётами</a>
+                    <div style="height: 10px; clear:both;"></div>
+                {% endif %}
+                {% if group_name == 'операционист' or group_name == 'клиент банка'%}
+                    <a href="{{url_for('bp_transfer.transfer')}}" style="font-size: 24px">Переводы между счетами</a>
+                    <div style="height: 10px; clear:both;"></div>
+                {% endif %}
+                {% if group_name == 'аналитик' %}
+                    <a href="{{url_for('bp_query.query_menu')}}" style="font-size: 24px">Поиск клиентов</a>
+                    <div style="height: 10px; clear:both;"></div>
+                    <a href="{{url_for('bp_query.query_bills_with_no_transactions')}}" style="font-size: 24px">
+                        Сведения о счетах, с которых не переводились деньги
+                    </a>
+                    <div style="height: 10px; clear:both;"></div>
+                    <!--<a href="{{url_for('bp_query.query_clients_and_bills')}}" style="font-size: 24px">Таблица клиентов и счетов</a>
+                    <div style="height: 10px; clear:both;"></div>-->
+                {% endif %}
+            </center>
+        </div>
+    </div>
+</body>
+</html>

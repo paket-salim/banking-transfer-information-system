@@ -1,0 +1,2 @@
+INSERT INTO client_transfer_history (bill_number, sum1, date_trans, bill_a, bill_b, month_trans)
+VALUES ('$amount', '$amount_received', '$exchange_rate', '$current_date', '$account_from', '$account_to', '$month_trans')

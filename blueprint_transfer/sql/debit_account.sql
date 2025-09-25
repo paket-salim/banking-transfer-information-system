@@ -1,0 +1,1 @@
+UPDATE bill SET balance = balance - '$amount', new_balance_date = '$new_balance_date' WHERE bill_number = '$account_from'

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главное меню</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1><center><h2>Главное меню</h2></center>
+        </header>
+        <div class="content-container">
+            <form action="" method="post">
+                <center><a class="btn" href="{{url_for('auth')}}">Авторизоваться</a></center>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

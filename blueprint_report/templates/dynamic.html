@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1>
+        </header>
+        <nav class="navigation-primary" aria-label="Primary">
+            <ul>
+                <li> <a href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a></li>
+                <li><a href="{{url_for('bp_auth.sign_out')}}">Выход из системы</a></li>
+            </ul>
+        </nav>
+    <center>
+        <div class="content-container">
+        <h2>{{title}}</h2>
+        <table style="border: 1px solid black; border-spacing: 0px; margin-bottom: 12px">
+            <tr>
+                {% for key in key_list %}
+                <th>{{key}}</th>
+                {% endfor %}
+            </tr>
+            {% for item in result %}
+            <tr>
+                {% for key in key_list %}
+                <td>{{item[key]}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+        <!--<a class="button" href="{{url_for('bp_query.query_index')}}">Общий поиск</a>-->
+        </div>
+    </center>
+    </div>
+</body>
+</html>

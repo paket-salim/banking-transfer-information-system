@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск клиентов</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1><center><h2>Поиск клиентов</h2></center>
+        </header>
+        <nav class="navigation-primary" aria-label="Primary">
+            <ul>
+
+                <li> <a href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a></li>
+                <li><a href="{{url_for('bp_auth.sign_out')}}">Выход из системы</a></li>
+
+            </ul>
+        </nav>
+        <div class="content-container">
+            <form action="" method="post">
+                <ul>
+                    <li><a href="{{url_for('bp_query.query_phone_number')}}">по номеру телефона</a></li>
+                    <br><br>
+                    <li><a href="{{url_for('bp_query.query_adress')}}">по адресу</a></li>
+                    <br><br>
+                    <li><a href="{{url_for('bp_query.query_birthday')}}">по дате рождения</a></li>
+                    <br><br>
+                    <li><a href="{{url_for('bp_query.query_surname')}}">по фамилии</a></li>
+                    <br><br>
+                    <li><a href="{{url_for('bp_query.query_signing_date')}}">по дате подписания договора</a></li>
+                    <br><br>
+                    <li><a href="{{url_for('bp_query.query_termination_date')}}">по дате расторжения договора</a></li>
+                </ul>
+                <!--<br>
+                <a href="{{url_for('bp_query.query_index')}}">Общий поиск клиентов</a>-->
+            </form>
+        </div>
+    </div>
+</body>
+</html>

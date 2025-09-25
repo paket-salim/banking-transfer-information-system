@@ -1,0 +1,17 @@
+{
+  "владелец": [
+    "bp_query"
+  ],
+  "аналитик": [
+    "bp_query",
+    "bp_report"
+  ],
+  "операционист": [
+    "bp_transfer",
+    "bp_query.query_bank_rate"
+  ],
+  "клиент банка": [
+    "bp_transfer",
+    "bp_query.query_bank_rate"
+  ]
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс" </h1>
+        </header>
+        <center>
+            <fieldset style="margin-top:10%; margin-left:30%; margin-right:30%; margin-bottom:10%;">
+                <legend align="center">Авторизация</legend>
+                <form action="" method="post" style="font-size:40px">
+                    <input type="text" placeholder="Логин" name="login" id="login">
+                    <br>
+                    <input type="password" placeholder="Пароль" name="password" id="password">
+                    <br>
+                    <input type="submit" class="button_slide" value="Войти">
+                    <input type="reset" class="button_slide" value="Сбросить">
+                </form>
+            </fieldset>
+            {% if error %}
+            <p class=error style="font-size: 20px"><strong>Произошла ошибка:<br/></strong> {{ error }}</p>
+            <div style="height: 10px; clear:both;"></div>
+            {% endif %}
+            <br>
+            <a style="font-size:25px" href="{{url_for('main_menu')}}">Вернуться на начальную страницу</a>
+            <br><br>
+        </center>
+    </div>
+</body>
+</html>
+
+

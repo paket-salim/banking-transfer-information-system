@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сведения о счетах</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1><center><h2>Сведения о счетах, с которых не переводились средства</h2></center>
+        </header>
+        <nav class="navigation-primary" aria-label="Primary">
+            <ul>
+                <li> <a href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a></li>
+                <li><a href="{{url_for('bp_auth.sign_out')}}">Выход из системы</a></li>
+            </ul>
+        </nav>
+        <center>
+        <div class="content-container">
+            <form action="" method="post">
+                <label for="bills_with_no_transactions">Введите месяц и год (YYYY-MM)</label>
+                <input type="text" name="bills_with_no_transactions" id="bills_with_no_transactions">
+                <br><br>
+                <input type="submit" class="button_slide slide_down" value="Найти">
+                <input type="reset" class="button_slide slide_down" value="Сбросить">
+                <br><br>
+            </form>
+            {% if error %}
+            <p class=error style="font-size: 20px"><strong>Произошла ошибка:<br/></strong> {{ error }}</p>
+            {% endif %}
+        </div>
+        </center>
+    </div>
+</body>
+</html>

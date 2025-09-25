@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1><center><h2>Перевод успешно выполнен</h2></center>
+        </header>
+        <nav class="navigation-primary" aria-label="Primary">
+            <ul>
+                <li> <a href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a></li>
+                <li><a href="{{url_for('bp_auth.sign_out')}}">Выход из системы</a></li>
+            </ul>
+        </nav>
+        <center>
+        <div class="content-container" style="height: auto; width: 400px; border: 4px solid black;
+        background-color: #d3d3d3">
+            <p>Счет отправителя: {{ updated_balance_result[1].bill_number }}</p>
+            <p>Счет получателя: {{ updated_balance_result[0].bill_number }}</p>
+            <p>Сумма перевода: {{ amount }}</p>
+            <p>Валюта счёта-отправителя: {{ currency }}</p>
+            <p style="color:blue;">Спасибо, что воспользовались нашими услугами!</p>
+        </div>
+        </center>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат поиска</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <header class="header-primary">
+            <h1 style="font-weight: bolder;">Банк "Прогресс"</h1>
+        </header>
+        <nav class="navigation-primary" aria-label="Primary">
+            <ul>
+                <li> <a href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a></li>
+                <li><a href="{{url_for('bp_auth.sign_out')}}">Выход из системы</a></li>
+            </ul>
+        </nav>
+        <center>
+            <br><br>
+            <div style="height: auto; width: 520px; border: 2px solid black; background-color: #d3d3d3">
+                {% for key in key_list %}
+                <a href="{{url_for('bp_report.create_report', proc=conf[key][0], sql=conf[key][1])}}" style="font-size: 24px">Создать {{key}}</a>
+                <br>
+                <a href="{{url_for('bp_report.report_show', sql=conf[key][1])}}" style="font-size: 24px">Показать {{key}}</a>
+                <div style="height: 30px; clear:both;"></div>
+                {% endfor %}
+                <div style="height: 20px; clear:both;"></div>
+            </div>
+            <br><br>
+        </center>
+    </div>
+</body>
+</html>
