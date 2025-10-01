@@ -65,7 +65,7 @@
 ---
 
 ## Структура базы данных
-<img width="745" height="713" alt="erd" src="https://github.com/user-attachments/assets/418adfa3-78e3-4231-a6c6-d97e56f4a397" />
+![инф  модель](https://github.com/user-attachments/assets/3bbc1f67-0aa4-4cfb-93a1-8963467e5ea9)
 
 ---
 
